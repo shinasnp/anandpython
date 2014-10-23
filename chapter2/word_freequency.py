@@ -1,0 +1,7 @@
+#Lets first write a function to count frequency of words, given a list of words.
+def word_freequency(a):
+	freequency={}
+	for q in a:
+		freequency[q]=freequency.get(q,0)+1
+	print freequency
+word_freequency('asian paints')

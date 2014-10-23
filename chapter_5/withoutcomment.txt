@@ -1,0 +1,289 @@
+def readfiles(filenames):
+    for f in filenames:
+        for line in open(f):
+            print line
+readfiles("sample.txt","sample2.txt")
+def readfiles(a):
+	b=open(a)
+	for q in b:
+		print q
+readfiles("sample.txt")
+def grep(pattern,filename):
+	for q in open(filename):
+		if pattern in q:
+			print q
+grep("as","sample.txt")
+	def __init__(self,n):
+		self.i=0
+		self.n=n
+
+	def __iter__(self):
+        	return self
+	
+	def next(self):
+		if self.i<self.n:
+			i=self.i
+			self.i+=1
+			return i
+		else:
+			print "stop itration"
+a=yrange(3)
+print a.next()
+print list (yrange(5))'''
+class yrange:
+    def __init__(self, n):
+        self.i = 0
+        self.n = n
+
+    def __iter__(self):
+        return self
+
+    def next(self):
+        if self.i < self.n:
+            i = self.i
+            self.i += 1
+            return i
+        else:
+            raise StopIteration()
+a=yrange(3)	
+print a.next()
+print a.next()	
+print list(yrange(5))
+def peep():
+	x=iter(range(5))
+	print x.next(),list(x)
+peep()
+def split(filename,no_lines):
+	m=readfiles(filename)
+	n=totallines(filename)
+	y=n/no_lines
+	print y
+	b=0
+	i=0
+	while(y>b):
+		mn=["a","b","c","d"]
+		writelines(m,b,mn,i,no_lines)
+		print "no_lines:%d"%no_lines
+		b+=1
+		i=i+no_lines
+def readfiles(filename):
+	x=[]
+	we=open(filename,"r")
+	for q in we:
+		x.append(q)
+	return x
+
+def totallines(filename):
+	a=open(filename)
+	t=len(a.readlines())
+	return t
+def writelines(m,b,mn,i,no_lines):
+	kl=open(mn[b],"w")
+	print m[i:i+no_lines]
+	for qwe in m[i:i+no_lines]:
+		kl.write(qwe+'\n')
+	kl.close() 
+		
+split("sample.txt",2)		
+import re
+import os
+def listallfiles():
+	q=os.listdir(".")
+	return q
+def search_python_files(l):
+	count=0
+	for u in l:
+		print u
+		y=re.match(r'.\w*.py$',u)
+		if y:
+			count+=1
+	print "The total count of python files:",count
+l=listallfiles()
+search_python_files(l)
+def readfiles(a):
+	b=open(a,"r")
+	for q in b:
+		print q
+readfiles("sample.txt")
+readfiles("sample2.txt")
+import re
+import os
+n=[]
+mn=open("withoutcomment.txt","w")
+def listallfiles():
+        q=os.listdir(".")
+        return q
+def search_python_files(l):
+        for u in l:
+                y=re.match(r'.\w*.py$',u)
+                if y:
+                        p=readfiles(u)
+        mn.close()
+        o=calculate(p)
+
+        print "The total count of python lines:",o
+def readfiles(k):
+        print k
+        qw=open(k).readlines()
+        for e in qw:
+		rt=re.search(r'^#|([\w+\d+])',e)
+		if  rt:
+                #if not (e.startswith("#")|e.startswith("'''")):
+                        mn.write(e)
+def calculate(p):
+        mn=open("withoutcomment.txt","r")
+        p=len(mn.readlines())
+        mn.close()
+        print p
+        return p
+l=listallfiles()
+search_python_files(l)
+def main(pattern,filename):
+	readfiles(filename)
+	grep(pattern,filename)
+def readfiles(filename):
+	for o in open(filename):
+		print  o	
+def grep(pattern,filename):
+	for o in open(filename):
+		if pattern in o:
+			print o
+main("as","sample.txt")
+import re
+import os
+n=[]
+def listallfiles():
+        q=os.listdir(".")
+        return q
+def search_python_files(l):
+        for u in l:
+                y=re.match(r'.\w*.py$',u)
+                if y:
+			p=readfiles(u)
+			n.append(p)
+		
+        print "The total count of python lines:",sum(n)
+def readfiles(u):
+	print u
+	p=len(open(u).readlines())
+	print p
+	return p
+l=listallfiles()
+search_python_files(l)
+class  yrange:
+    def __init__(self, n):
+        self.i = 0
+        self.n = n
+
+    def __iter__(self):
+        return self
+
+    def next(self):
+        if self.i < self.n:
+            i = self.n
+            self.n  -= 1
+            return i
+        else:
+            raise StopIteration()
+a=yrange(4)
+print a.next()
+print a.next()
+print list(yrange(5))
+
+import re
+import os
+n=[]
+c=[]
+def listfiles():
+	a=os.listdir(".")
+	return a
+def readfile(l):
+	for i in l:
+		if not (i.startswith("#")|i.startswith("'''")):
+			s=re.match(r'.\w*.py$',i)
+				if s:
+					print i
+					print len(i)
+					p=len(open(i).readlines())
+					n.append(p)
+	print "sum of all lines in python file is ",sum(n)
+l=listfiles()
+readfile(l)	
+
+import os
+def findfiles():
+	q=os.listdir(".")
+	for j in  q:
+		print os.path.abspath(j)
+	
+findfiles()
+a=open("sample.txt","r")
+j=1
+for q in a.readlines():
+	if j>len(a.readlines()):
+		#if j<len(open("sample.txt").readlines()):
+		print len(a.readlines())
+		print j
+		print q
+		j-=1     
+	else:
+		j+=1                   
+import re
+import os
+n=[]
+mn=open("withoutcomment.txt","w")
+def listallfiles():
+        q=os.listdir(".")
+        return q
+def search_python_files(l):
+        for u in l:
+                y=re.match(r'.\w*.py$',u)
+                if y:
+                        p=readfiles(u)
+	mn.close()	
+	o=calculate(p)
+
+        print "The total count of python lines:",o
+def readfiles(k):
+        print k
+	qw=open(k).readlines()
+	for e in qw:
+		if not (e.startswith("#")|e.startswith("'''")):
+			mn.write(e)
+def calculate(p):
+	mn=open("withoutcomment.txt","r")
+	p=len(mn.readlines())
+	mn.close()
+        print p
+        return p
+l=listallfiles()
+search_python_files(l)
+
+def izip():
+	a=["a","b","c"]
+	b=[0,1,2]
+	#print [(x,y) for x in a for y in b if a.index(x)==b.index(y)]
+	for x in a:
+		for y in b:
+			if a.index(x)==b.index(y):
+				print x,y
+izip()
+
+files=["sample.txt","sample2.txt"]
+k=[]
+def readfiles(files):
+	for f in files:
+		for q in open(f):
+			 k.append(q)
+	return k
+u=readfiles(files)
+def select(u):
+	for e in u:
+		if len(e)>12:
+			print e
+		#print e
+select(u)	
+	a=["a","b","c","d"]
+	for q,w in itertools.izip(a,range(len(a))):
+		print q,w
+enumarate()

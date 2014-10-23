@@ -1,0 +1,7 @@
+import zipfile
+def zip():
+	z=[('c.zip'),('jkl.zip'),('yui.txt')]
+	for q in z:
+		j=zipfile.is_zipfile(z)
+		print j
+zip()
